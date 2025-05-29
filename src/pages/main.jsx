@@ -8,10 +8,14 @@ const MainPage = () => {
   const [message, setMessage] = useState("");
 
   const showLoading = () => {
+    console.log("Loading");
+
     setOnLoading(true);
   };
 
   const hideLoading = () => {
+    console.log("Loading End");
+
     setOnLoading(false);
   };
 
@@ -32,6 +36,9 @@ const MainPage = () => {
         .then((res) => {
           console.log("Response: ", res);
           return res.data;
+        })
+        .then((data) => {
+          console.log("Your Message: ", data.message);
         });
     } catch (error) {
       hideLoading();
