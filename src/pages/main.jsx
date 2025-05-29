@@ -1,6 +1,8 @@
 import axios from "axios";
 import { React, useCallback, useState } from "react";
 
+import "../css/main.css";
+
 const MainPage = () => {
   const [message, setMessage] = useState("");
 
@@ -30,15 +32,24 @@ const MainPage = () => {
   return (
     <>
       <main>
-        <h3>Test Page</h3>
-        <input
-          type="text"
-          name="message"
-          placeholder="생성 이미지 묘사"
-          onChange={setData}
-        />
-        <button type="button" onClick={sendData}>
-          생성
+        <div className="decorative-element"></div>
+        <div className="decorative-element"></div>
+
+        <h3>AI 이미지 생성기</h3>
+        <p className="subtitle">상상을 현실로 만들어보세요</p>
+
+        <div className="input-container">
+          <input
+            type="text"
+            name="message"
+            placeholder="생성할 이미지를 자세히 묘사해주세요..."
+            id="messageInput"
+            onChange={setData}
+          />
+        </div>
+
+        <button type="button" id="generateBtn" onClick={sendData}>
+          ✨ 생성하기
         </button>
       </main>
     </>
