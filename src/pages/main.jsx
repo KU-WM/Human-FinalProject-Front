@@ -4,7 +4,16 @@ import { React, useCallback, useState } from "react";
 import "../css/main.css";
 
 const MainPage = () => {
+  const [onLoading, setOnLoading] = useState(false);
   const [message, setMessage] = useState("");
+
+  const showLoading = () => {
+    setOnLoading(true);
+  };
+
+  const hideLoading = () => {
+    setOnLoading(false);
+  };
 
   const setData = (e) => {
     console.log("message", e.target.value);
@@ -15,6 +24,7 @@ const MainPage = () => {
     console.log("Send Data!");
 
     try {
+      showLoading();
       axios
         .post("https://human-finalproject-back.onrender.com/user/answer", {
           message: message,
@@ -24,13 +34,19 @@ const MainPage = () => {
           return res.data;
         });
     } catch (error) {
+      hideLoading();
       console.log("Error ", error);
       throw error;
+    } finally {
+      hideLoading();
     }
   };
 
   return (
     <>
+      <div className={onLoading ? "loadingModal" : "endModal"}>
+        <div className="spinner"></div>
+      </div>
       <main>
         <div className="decorative-element"></div>
         <div className="decorative-element"></div>
