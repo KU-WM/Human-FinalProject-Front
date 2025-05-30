@@ -10,25 +10,18 @@ const MainPage = () => {
   const [showImage, setShowImage] = useState(false);
 
   const showLoading = () => {
-    console.log("Loading");
-
     setOnLoading(true);
   };
 
   const hideLoading = () => {
-    console.log("Loading End");
-
     setOnLoading(false);
   };
 
   const setData = (e) => {
-    console.log("message", e.target.value);
     setMessage(e.target.value);
   };
 
   const sendData = async () => {
-    console.log("Send Data!");
-
     try {
       showLoading();
       const res = await axios
@@ -36,12 +29,9 @@ const MainPage = () => {
           message: message,
         })
         .then((res) => {
-          console.log("Response: ", res);
           return res.data;
         })
         .then((data) => {
-          console.log("Your Message: ", data);
-
           setImage("data:image/png;base64," + data.image);
           setShowImage(true);
         });
