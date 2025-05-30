@@ -6,6 +6,8 @@ import "../css/main.css";
 const MainPage = () => {
   const [onLoading, setOnLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [image, setImage] = useState("");
+  const [showImage, setShowImage] = useState(false);
 
   const showLoading = () => {
     console.log("Loading");
@@ -29,8 +31,8 @@ const MainPage = () => {
 
     try {
       showLoading();
-      axios
-        .post("https://human-finalproject-back.onrender.com/user/answer", {
+      const res = await axios
+        .post("https://human-finalproject-back.onrender.com/user/generate", {
           message: message,
         })
         .then((res) => {
@@ -38,7 +40,10 @@ const MainPage = () => {
           return res.data;
         })
         .then((data) => {
-          console.log("Your Message: ", data.message);
+          console.log("Your Message: ", data);
+
+          setImage("data:image/png;base64," + data.image);
+          setShowImage(true);
         });
     } catch (error) {
       hideLoading();
@@ -47,6 +52,12 @@ const MainPage = () => {
     } finally {
       hideLoading();
     }
+  };
+
+  const generateNewImage = () => {
+    setMessage("");
+    setShowImage(false);
+    setImage("");
   };
 
   return (
@@ -60,6 +71,22 @@ const MainPage = () => {
 
         <h3>AI 이미지 생성기</h3>
         <p className="subtitle">상상을 현실로 만들어보세요</p>
+
+        {/* 이미지 표시 영역 */}
+        {showImage && (
+          <div className="image-section">
+            <div className="image-container">
+              <img
+                src={image}
+                alt="생성된 이미지"
+                className="generated-image"
+              />
+              <button onClick={generateNewImage} className="new-image-btn">
+                🎨 새로운 이미지 생성하기
+              </button>
+            </div>
+          </div>
+        )}
 
         <div className="input-container">
           <input

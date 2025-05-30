@@ -52,6 +52,136 @@
   }
 }
 
+/* 메인 컨테이너 */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* 헤더 영역 */
+.header-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20vh);
+}
+
+.header-section.with-image {
+  transform: translateY(0);
+  margin-bottom: 2rem;
+}
+
+.header-section.without-image {
+  transform: translateY(20vh);
+  margin-bottom: 0;
+}
+
+h3 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h3.with-image {
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subtitle.with-image {
+  margin-bottom: 1rem;
+}
+
+/* 이미지 표시 영역 */
+.image-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  animation: imageSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 600px;
+  width: 100%;
+}
+
+.generated-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+.new-image-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.new-image-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* 입력 영역 */
+.input-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 60px 40px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-10vh);
+}
+
+.input-section.with-image {
+  padding: 30px;
+  max-width: 800px;
+  transform: translateY(0);
+}
+
 main {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -79,23 +209,15 @@ main {
   }
 }
 
-h3 {
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
-}
-
-.subtitle {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
-  font-weight: 300;
+@keyframes imageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .input-container {
@@ -205,23 +327,6 @@ button:active {
   }
 }
 
-@media (max-width: 600px) {
-  main {
-    padding: 40px 20px;
-    margin: 20px;
-  }
-
-  h3 {
-    font-size: 2rem;
-  }
-
-  input[type="text"],
-  button {
-    padding: 16px 20px;
-    font-size: 1rem;
-  }
-}
-
 /* 로딩 모달 */
 .loadingModal {
   position: fixed;
@@ -261,5 +366,39 @@ button:active {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    padding: 20px 15px;
+  }
+
+  .input-section {
+    padding: 40px 20px;
+    margin: 20px 0;
+  }
+
+  .input-section.with-image {
+    padding: 25px 15px;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h3.with-image {
+    font-size: 1.8rem;
+  }
+
+  input[type="text"],
+  button {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+
+  .image-container {
+    padding: 15px;
+    margin: 0 10px;
   }
 }
