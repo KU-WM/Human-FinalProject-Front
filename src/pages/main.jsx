@@ -29,12 +29,13 @@ const MainPage = () => {
           message: message,
         })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
 
           return res.data;
         })
         .then((data) => {
-          console.log(data);
+          // console.log(data);
+
           setImage("data:image/png;base64," + data); // springboot에서 전송 방식 변경
           setShowImage(true);
         });
@@ -47,10 +48,13 @@ const MainPage = () => {
     }
   };
 
-  const generateNewImage = () => {
-    setMessage("");
-    setShowImage(false);
-    setImage("");
+  const downloadImage = () => {
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "generated_image.png"; // 원하는 파일 이름
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -74,8 +78,8 @@ const MainPage = () => {
                 alt="생성된 이미지"
                 className="generated-image"
               />
-              <button onClick={generateNewImage} className="new-image-btn">
-                🎨 새로운 이미지 생성하기
+              <button onClick={downloadImage} className="new-image-btn">
+                🎨 생성된 이미지 다운로드
               </button>
             </div>
           </div>
