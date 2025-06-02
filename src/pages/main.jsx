@@ -29,10 +29,13 @@ const MainPage = () => {
           message: message,
         })
         .then((res) => {
+          console.log(res);
+
           return res.data;
         })
         .then((data) => {
-          setImage("data:image/png;base64," + data.image);
+          console.log(data);
+          setImage("data:image/png;base64," + data); // springboot에서 전송 방식 변경
           setShowImage(true);
         });
     } catch (error) {
