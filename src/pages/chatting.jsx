@@ -25,19 +25,19 @@ const MainPage = () => {
     try {
       showLoading();
       const res = await axios
-        .post("https://back.lnpra.com/user/generate", {
+        .post("https://back.lnpra.com/user/chat", {
           message: message,
         })
         .then((res) => {
-          // console.log(res);
+          console.log(res);
 
           return res.data;
         })
         .then((data) => {
-          // console.log(data);
+          console.log(data);
 
-          setImage("data:image/png;base64," + data); // springboot에서 전송 방식 변경
-          setShowImage(true);
+          //   setImage("data:image/png;base64," + data); // springboot에서 전송 방식 변경
+          //   setShowImage(true);
         });
     } catch (error) {
       hideLoading();

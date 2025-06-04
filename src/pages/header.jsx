@@ -13,6 +13,10 @@ const Header = () => {
     navigate("/mypage");
   };
 
+  const goChat = () => {
+    navigate("/chat");
+  };
+
   return (
     <>
       <header>
@@ -26,8 +30,8 @@ const Header = () => {
               마이 페이지
             </div>
             <div className="header-divider"></div>
-            <div className="header-nav-item" onClick={goMyPage}>
-              소개
+            <div className="header-nav-item" onClick={goChat}>
+              채팅
             </div>
             {/* 추가 메뉴 항목들은 여기에 추가하면 됩니다 */}
           </nav>

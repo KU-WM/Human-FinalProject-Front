@@ -10,7 +10,7 @@ const MyPage = () => {
       try {
         showLoading();
         const res = await axios
-          .get("http://localhost:8080/user/images")
+          .get("https://back.lnpra.com/user/images")
           .then((res) => {
             console.log("res: ", res);
 
