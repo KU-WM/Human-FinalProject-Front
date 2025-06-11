@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import refreshApi from "../component/refreshApi";
 
 const MyPage = () => {
   const [onLoading, setOnLoading] = useState(false);
@@ -9,8 +10,8 @@ const MyPage = () => {
     const getImages = async () => {
       try {
         showLoading();
-        const res = await axios
-          .get("https://back.lnpra.com/user/images")
+        const res = await refreshApi
+          .get("/image/list")
           .then((res) => {
             console.log("res: ", res);
 
@@ -19,7 +20,6 @@ const MyPage = () => {
           .then((data) => {
             console.log("data: ", data);
             setImageList(data);
-            console.log("imageList: ", imageList);
           });
       } catch (error) {
         console.log(error);
@@ -59,13 +59,13 @@ const MyPage = () => {
           <div className="image-section">
             <div className="image-container">
               <img
-                src={"data:image/png;base64," + image.image}
+                src={"/api/file/image/" + image.saveName}
                 alt="생성된 이미지"
                 className="generated-image"
               />
               <button
                 onClick={() =>
-                  downloadImage("data:image/png;base64," + image.image)
+                  downloadImage("/api/file/image/" + image.saveName)
                 }
                 className="new-image-btn"
               >

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { React, useCallback, useState } from "react";
+import { useState } from "react";
 
 import "../css/main.css";
 
@@ -8,6 +8,8 @@ const MainPage = () => {
   const [message, setMessage] = useState("");
   const [image, setImage] = useState("");
   const [showImage, setShowImage] = useState(false);
+  const [audio, setAudio] = useState("");
+  const [showAudio, setShowAudio] = useState(false);
 
   const showLoading = () => {
     setOnLoading(true);
@@ -24,21 +26,25 @@ const MainPage = () => {
   const sendData = async () => {
     try {
       showLoading();
-      const res = await axios
-        .post("https://back.lnpra.com/user/generate", {
+
+      const [res1, res2] = await Promise.all([
+        axios
+        .post("/api/image/generate", {
+          message: message,
+        }),
+        axios
+        .post("/api/audio/generate", {
           message: message,
         })
-        .then((res) => {
-          // console.log(res);
+      ])
+      console.log("res1", res1);
+      console.log("res2", res2);
 
-          return res.data;
-        })
-        .then((data) => {
-          // console.log(data);
+      setImage("/api/file/image/" + res1.data); // springboot에서 전송 방식 변경
+      setShowImage(true);
+      setAudio("/api/file/audio/" + res2.data); // springboot에서 전송 방식 변경
+      setShowAudio(true);
 
-          setImage("data:image/png;base64," + data); // springboot에서 전송 방식 변경
-          setShowImage(true);
-        });
     } catch (error) {
       hideLoading();
       console.log("Error ", error);
@@ -85,6 +91,12 @@ const MainPage = () => {
           </div>
         )}
 
+        {showAudio && (
+          <audio controls>
+            <source src={audio} type="audio/wav" />
+            브라우저가 audio 태그를 지원하지 않습니다.
+          </audio>
+        )}
         <div className="input-container">
           <input
             type="text"
