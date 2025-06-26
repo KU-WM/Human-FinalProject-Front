@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../css/header.css";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [onLoading, setOnLoading] = useState(false);
@@ -25,6 +25,10 @@ const Header = () => {
     navigate("/login");
   };
 
+  const goAdmin = () => {
+    navigate("/admin");
+  };
+
   const showLoading = () => {
     setOnLoading(true);
   };
@@ -35,8 +39,8 @@ const Header = () => {
 
   const Logout = async() => {
     showLoading();
-    window.localStorage.removeItem("token");
     await axios.post("/api/user/logout", null, { withCredentials: true });
+    window.localStorage.clear();
     hideLoading();
     navigate("/");
   }
@@ -57,10 +61,17 @@ const Header = () => {
               마이 페이지
             </div>
             <div className="header-divider"></div>
-            <div className="header-nav-item" onClick={goChat}>
+            {/* <div className="header-nav-item" onClick={goChat}>
               채팅
-            </div>
-            <div className="header-divider"></div>
+            </div> */}
+            {window.localStorage.getItem("isAdmin") !== null &&
+              <>
+                <div className="header-nav-item" onClick={goAdmin}>
+                  관리자
+                </div>
+                <div className="header-divider"></div>
+              </>
+            }
             {window.localStorage.getItem("token") === null ?
               <div className="header-nav-item" onClick={goLogin}>
                 로그인
