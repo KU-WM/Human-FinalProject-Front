@@ -44,12 +44,13 @@ refreshApi.interceptors.response.use(
                 // refresh 실패 → 로그아웃
                 localStorage.setItem("redirectAfterLogin", window.location.pathname);
 
-                localStorage.removeItem("token");
+                localStorage.clear();
 
                 window.location.href = "/login";
                 return new Promise(() => {});
             }
         }
+        return Promise.reject(error);
     }
 )
 
