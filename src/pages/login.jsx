@@ -47,12 +47,15 @@ const LoginPage = () => {
             }
         )
         .then((res) => {
-            console.log(res);
+            console.log("login_success", res);
             return res.data;
         })
         .then((data) => {
             console.log(data);
             window.localStorage.setItem("token", data.accessToken);
+            if(data.userGrade == "ROLE_10") {
+              window.localStorage.setItem("isAdmin", true);
+            }
             const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
             localStorage.removeItem("redirectAfterLogin");
             hideLoading();
@@ -63,7 +66,7 @@ const LoginPage = () => {
     } catch (error) {
         hideLoading();
         console.error('로그인인 실패:', error);
-        alert('로그인에에 실패했습니다.');
+        alert('로그인에 실패했습니다.');
     }
   };
 
@@ -124,7 +127,7 @@ const LoginPage = () => {
     setName('');
   };
 
-    const handleKeyDown = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       isSignupMode ? signup() : login();
     }
