@@ -118,7 +118,7 @@ const MainPage = () => {
 
   const downloadImage = () => {
     const link = document.createElement("a");
-    link.href = image;
+    link.href = "/api/file/image/" + image.url;
     link.download = "generated_image.png";
     document.body.appendChild(link);
     link.click();
