@@ -7,8 +7,6 @@ const MainPage = () => {
   const [message, setMessage] = useState("");
   const [image, setImage] = useState("");
   const [showImage, setShowImage] = useState(false);
-  const [audio, setAudio] = useState("");
-  const [showAudio, setShowAudio] = useState(false);
   
   // 새로운 상태들
   const [soundEffects, setSoundEffects] = useState([]);
@@ -54,11 +52,8 @@ const MainPage = () => {
 
       setImage(res.data); // springboot에서 전송 방식 변경
       setShowImage(true);
-
-      setAudio(""); // 오디오는 일단 비워둠
       
       setShowImage(true);
-      setShowAudio(false);
       setSoundEffects([]);
       setSoundMode('buttons');
 
