@@ -52,7 +52,7 @@ const LoginPage = () => {
         .then((data) => {
             console.log(data);
             window.localStorage.setItem("token", data.accessToken);
-            if(data.userGrade == "ROLE_10") {
+            if(data.userGrade === "ROLE_10") {
               window.localStorage.setItem("isAdmin", true);
             }
             const redirectPath = localStorage.getItem("redirectAfterLogin") || "/";
