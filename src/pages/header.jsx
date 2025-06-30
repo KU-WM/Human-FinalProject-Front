@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../css/header.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [onLoading, setOnLoading] = useState(false);
@@ -15,10 +15,6 @@ const Header = () => {
 
   const goMyPage = () => {
     navigate("/mypage");
-  };
-
-  const goChat = () => {
-    navigate("/chat");
   };
 
   const goLogin = () => {
@@ -61,9 +57,6 @@ const Header = () => {
               마이 페이지
             </div>
             <div className="header-divider"></div>
-            {/* <div className="header-nav-item" onClick={goChat}>
-              채팅
-            </div> */}
             {window.localStorage.getItem("isAdmin") !== null &&
               <>
                 <div className="header-nav-item" onClick={goAdmin}>
