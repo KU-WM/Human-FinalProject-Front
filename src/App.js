@@ -3,7 +3,6 @@ import { StrictMode, useEffect } from "react";
 import RootRoutes from "./routes/RootRoutes";
 import Header from "./pages/header";
 import refreshApi from "./component/refreshApi";
-import axios from "axios";
 
 function App() {
 
