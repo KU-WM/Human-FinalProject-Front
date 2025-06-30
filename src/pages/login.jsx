@@ -11,7 +11,6 @@ const LoginPage = () => {
   
   // 회원가입용 추가 필드들
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [email, setEmail] = useState('');
   const [name, setName] = useState('');
 
   const navigate = useNavigate();
