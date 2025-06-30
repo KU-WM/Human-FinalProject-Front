@@ -122,7 +122,6 @@ const LoginPage = () => {
     setUserId('');
     setPassword('');
     setConfirmPassword('');
-    setEmail('');
     setName('');
   };
 
