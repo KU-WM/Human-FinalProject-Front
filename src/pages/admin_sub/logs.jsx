@@ -7,8 +7,6 @@ const Logs = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [sortField, setSortField] = useState('accessTime');
-  const [sortDirection, setSortDirection] = useState('desc');
 
   useEffect(() => {
     fetchLogs();
