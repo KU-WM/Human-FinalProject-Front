@@ -6,11 +6,9 @@ import Images from "./admin_sub/images";
 import Logs from "./admin_sub/logs";
 import Statistics from "./admin_sub/statistic";
 import TempImages from "./admin_sub/tempImage";
-import ReactDOM from "react-dom"
 
 const AdminPage = () => {
   const [selectedMenu, setSelectedMenu] = useState(null);
-  const [onLoading, setOnLoading] = useState(false);
   const [isAuthorized, setIsAuthorized] = useState(false)
 
   useEffect(() => {
@@ -42,10 +40,6 @@ const AdminPage = () => {
 
   const handleMenuClick = (menuId) => {
     setSelectedMenu(menuId);
-  };
-
-  const handleBackToMenu = () => {
-    setSelectedMenu(null);
   };
 
   const renderMenuGrid = () => (
@@ -142,14 +136,6 @@ const AdminPage = () => {
 
   return (
     <>
-      {/* 로딩 모달 */}
-      {onLoading && ReactDOM.createPortal(
-        <div className="loading-modal_admin">
-          <div className="loading-spinner_admin" />
-        </div>,
-        document.getElementById('root')
-      )}
-
       {/* 메인 컨테이너 */}
       <div className="main-container_admin">
         <div className="background-animation_admin" />
