@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import MainPage from "../pages/main";
 import MyPage from "../pages/myPage";
 import LoginPage from "../pages/login";
@@ -11,7 +11,6 @@ const RootRoutes = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/mypage" element={<MyPage />} />
-        {/* <Route path="/chat" element={<Chatting />} /> */}
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </>
