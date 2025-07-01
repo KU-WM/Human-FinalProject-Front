@@ -7,6 +7,20 @@
 ![Nodedotjs](https://img.shields.io/badge/nodejs-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Nginx](https://img.shields.io/badge/nginx-009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
  
+## 전체 프로젝트 구성
+코드의 유지 보수를 쉽게 하기 위하여 아래와 같이 레포지토리를 분리하였습니다.
+
+[FrontEnd] - 현재 페이지<br>
+https://github.com/KU-WM/Human-FinalProject-Front<br>
+[BackEnd]<br>
+https://github.com/KU-WM/Human-FinalProject-Back.git<br>
+[Api Server]<br>
+https://github.com/KU-WM/Human-FinalProject-API.git<br>
+[내부망 구성]<br>
+nginx 사용 - 리버스 프록시 적용<br>
+[외부 서비스 배포]<br>
+cloudflare tunnel - localhost와 외부 도메인 연결<br>
+
 ## 소개
 <img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" />
 Gemini API를 이용하여 간편하게 원하는 이미지를 생성하고 Stable-Audio 1.0 모델을 활용하여 간단한 효과음을 생성할 수 있는 사이트의 FrontEnd 코드 입니다.
@@ -77,17 +91,6 @@ https://lnpra.com 에 접속하시고 서비스를 사용하시면 됩니다.<br
 기존 ai 이미지 생성시 유료 서비스 이거나, 모델 / LoRA / 파라미터 / 프롬프트 등 복잡한 입력이 필요 한 경우가 많습니다. 효과음 생성의 경우는 찾는것 부터가 힘든 경우도 있습니다.<br>
 이 기능들을 하나의 사이트로 편하게 이용할 수 있도록 제작하였습니다.
 
-## 전체 프로젝트 구성
-[FrontEnd] - 현재 페이지<br>
-https://github.com/KU-WM/Human-FinalProject-Front<br>
-[BackEnd]<br>
-https://github.com/KU-WM/Human-FinalProject-Back.git<br>
-[Api Server]<br>
-https://github.com/KU-WM/Human-FinalProject-API.git<br>
-[내부망 구성]<br>
-nginx 사용 - 리버스 프록시 적용<br>
-[외부 서비스 배포]<br>
-cloudflare tunnel - localhost와 외부 도메인 연결<br>
 
 ## 개발 과정
 - 2025.05.26 ~ 2025.06.26 (약 5주) 의 기간동안 진행
