@@ -5,16 +5,16 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
  
-## Introduction
+## 소개
+<img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" />
 Gemini API를 이용하여 간편하게 원하는 이미지를 생성하고 Stable-Audio 1.0 모델을 활용하여 간단한 효과음을 생성할 수 있는 사이트의 FrontEnd 코드 입니다.
 
-## Purpose
+## 제작 목적
 쉽게 접근 가능하고 불편함 없이 간단한 설명만으로 원하는 이미지와 그에 어울리는 효과음을 생성할 수 있는 서비스를 제공하기 위해 제작하였습니다.
 
-## Usage
-
+## 사용법
 https://lnpra.com 에 접속하시고 서비스를 사용하시면 됩니다.<br>
-개인 로컬 환경에서 실행하는 프로젝트라 항상 서비스가 구동중이진 않습니다. 접속 불가시 아래의 실행 예시를 참고해 주세요.<br>
+개인 로컬 환경에서 실행/배포하는 프로젝트라 항상 서비스가 구동중이진 않습니다. 접속 불가시 아래의 실행 예시를 참고해 주세요.<br>
 
 <details>
   <summary>실행 예시</summary>
@@ -40,91 +40,58 @@ https://lnpra.com 에 접속하시고 서비스를 사용하시면 됩니다.<br
     <img width="49%" src="https://github.com/user-attachments/assets/6dd72b52-c659-453e-b513-eb879a5da885" />
   </div>
   <p>관리자 로그인(좌) / 일반 유저 로그인(우)</p>
-  
+
   <h3>회원가입</h3>
-  <img src="" />
+  <img src="https://github.com/user-attachments/assets/7ca891d8-33f4-4074-a6dd-1bdd9a1550b2" />
   <p>원하는 이미지를 묘사한 후 엔터/생성버튼 클릭</p>
-  
+
   <h3>관리자 페이지</h3>
-  <img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" />
+  <img src="https://github.com/user-attachments/assets/33a7dd75-a505-43ce-b71b-b8fbdcb22e7d" />
   <p>원하는 이미지를 묘사한 후 엔터/생성버튼 클릭</p>
   
   <h3>로그</h3>
-  <img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" />
+  <img src="https://github.com/user-attachments/assets/ff45c2fb-09ac-4612-b4ce-22337bd714e9" />
   <p>원하는 이미지를 묘사한 후 엔터/생성버튼 클릭</p>
-  
+
   <h3>통계</h3>
-  <img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" />
+  <img src="https://github.com/user-attachments/assets/c6809c20-8e8a-4eaa-a211-46495d3430f5" />
   <p>원하는 이미지를 묘사한 후 엔터/생성버튼 클릭</p>
-  
+
   <h3>유저</h3>
-  <img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" />
+  <img src="https://github.com/user-attachments/assets/41c8635f-5230-49f8-8f71-5656585c81d8" />
   <p>원하는 이미지를 묘사한 후 엔터/생성버튼 클릭</p>
-  
+
   <h3>생성된 이미지</h3>
-  <img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" />
+  <img src="https://github.com/user-attachments/assets/7e9ec28f-c9cd-4534-9fd8-a244b9192039" />
   <p>원하는 이미지를 묘사한 후 엔터/생성버튼 클릭</p>
-  
+
   <h3>임시 생성된 이미지</h3>
-  <img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" />
+  <img src="https://github.com/user-attachments/assets/73d246d4-0422-4ce4-bd2e-8b8105b8a10d" />
   <p>원하는 이미지를 묘사한 후 엔터/생성버튼 클릭</p>
   
 </details>
 
-## Differentiation
-복잡한 설정 없이 간단한 설명만으로 이미지 생성이 가능합니다.<br>
-생성된 이미지에 어울리는 효과음을 생성할 수 있습니다.
+## 필요성
+기존 ai 이미지 생성시 유료 서비스 이거나, 모델 / LoRA / 파라미터 / 프롬프트 등 복잡한 입력이 필요 한 경우가 많습니다. 효과음 생성의 경우는 찾는것 부터가 힘든 경우도 있습니다.<br>
+이 기능들을 하나의 사이트로 편하게 이용할 수 있도록 제작하였습니다.
 
-## Necessity
-기존 ai 이미지 생성시 유료 서비스 이거나, 모델 / LoRA / 파라미터 / 프롬프트 등 복잡한 입력이 필요 한 경우가 많습니다. 효과음 생성의 경우는 찾는것 부터가 힘든 경우도 있습니다. 이 기능들을 하나의 사이트로 편하게 이용할 수 있도록 제작하였습니다.
+## 전체 프로젝트 구성
+[FrontEnd] - 현재 페이지<br>
+https://github.com/KU-WM/Human-FinalProject-Front<br>
+[BackEnd]<br>
+https://github.com/KU-WM/Human-FinalProject-Back.git<br>
+[Api Server]<br>
+https://github.com/KU-WM/Human-FinalProject-API.git<br>
+[내부망 구성]<br>
+nginx 사용 - 리버스 프록시 적용<br>
+[외부 서비스 배포]<br>
+cloudflare tunnel - localhost와 외부 도메인 연결<br>
 
-## Installation
-외부 접속이 가능한 사이트를 목표로 하여 해당 코드만으론 실행이 어렵습니다. 
-제 로컬 환경에서 실행하는 방법을 적어두었으니 참고하여 변환하여 사용해 주시면 감사하겠습니다.
+## 개발 과정
+- 2025.05.26 ~ 2025.06.26 (약 5주) 의 기간동안 진행
+- 오전/오후의 스크럼 회의를 통해 진행사항을 점검하고, 애자일 방법론을 통하여 유연한 개발을 진행
 
-<details>
-  <summary>실행 방법</summary>
-  <h3>1) FrontEnd 설치 및 구동</h3>
+## License
 
-  <pre><code class="language-bash">
-git clone https://github.com/KU-WM/Human-FinalProject-Front.git
-npm install
-npm run start
-  </code></pre>
-
-  <h3>2) BackEnd 설치 및 구동</h3>
-
-  <h4>2-1) git clone</h4>
-
-  <pre><code class="language-bash">
-git clone https://github.com/KU-WM/Human-FinalProject-Back.git
-  </code></pre>
-
-  <h4>2-2) intellij 환경 변수 설정</h4>
-
-  <pre>
-db_pw - db 비밀번호
-db_url - db 엔드포인트
-db_user - db 유저 아이디
-gemini_api - 발급받은 api
-gemini_base_url - https://generativelanguage.googleapis.com/v1beta
-gemini_image_url - /models/gemini-2.0-flash-preview-image-generation:generateContent?key=
-gemini_text_url - /models/gemini-2.0-flash:generateContent?key=
-jwt_secret_key - jwt 토큰 생성시 검증 key값
-  </pre>
-
-  <h4>2-3) intellij 프로젝트 시작</h4>
-  
-  <pre>
-BackApplication 우클릭 -> BackApplication.main() 실행
-  </pre>
-
-  <h3>3) api 서버 구동</h3>
-
-  <h4>3-1) git clone </h4>
-  
-  <pre><code class="language-bash">
-git clone https://github.com/KU-WM/Human-FinalProject-Back.git
-  </code></pre>
-  
-</details>
+본 프로젝트의 코드는 비상업적 용도로 자유롭게 사용하실 수 있습니다.
+상업적 이용이나 수정, 재배포 시에는 사전 연락을 부탁드립니다.
