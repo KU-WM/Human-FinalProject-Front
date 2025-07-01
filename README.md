@@ -22,13 +22,9 @@ Gemini API와 Stable-Audio 1.0 모델을 활용하여 **사용자가 간단한 �
 
 프로젝트의 유지보수를 위하여 개인 프로젝트를 아래 3개의 레포지토리로 분리하여 저장하였습니다.<br>
 
-[FrontEnd] - 현재 페이지<br>
-https://github.com/KU-WM/Human-FinalProject-Front<br>
-[BackEnd]<br>
-https://github.com/KU-WM/Human-FinalProject-Back.git<br>
-[Api Server]<br>
-https://github.com/KU-WM/Human-FinalProject-API.git<br>
-<br>
+[FrontEnd](https://github.com/KU-WM/Human-FinalProject-Front) - 현재 페이지<br>
+[BackEnd](https://github.com/KU-WM/Human-FinalProject-Back.git)<br>
+[Api Server](https://github.com/KU-WM/Human-FinalProject-API.git)<br>
 
 ## 📘 사용법
 개인 로컬 환경에서 실행/배포하는 프로젝트라 항상 서비스가 구동 중이진 않을 수 있습니다. 접속 불가시 아래의 실행 예시를 참고해 주세요.<br>
