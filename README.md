@@ -11,8 +11,8 @@
 ## 소개
 <img src="https://github.com/user-attachments/assets/7fa99942-a334-4033-bf96-b919ff1f4d43" /><br>
 
-Gemini API를 이용하여 간편하게 원하는 이미지를 생성하고 Stable-Audio 1.0 모델을 활용하여 간단한 효과음을 생성할 수 있는 사이트의 FrontEnd 코드 입니다.<br>
-https://lnpra.com 에 접속하시고 서비스를 사용하시면 됩니다.<br>
+Gemini API와 Stable-Audio 1.0 모델을 활용하여 **사용자가 간단한 텍스트 입력만으로 원하는 이미지와 간단한 효과음을 생성할 수 있는 사이트**를 풀스택으로 개발하고 서비스 하였습니다. 이 레포지토리는 해당 서비스의 FrontEnd 코드 입니다.<br>
+https://lnpra.com 에 접속하시면 해당 서비스를 사용하실 수 있습니다.<br>
 
 프로젝트의 유지보수를 위하여 개인 프로젝트를 아래 3개의 레포지토리로 분리하여 저장하였습니다.<br>
 
@@ -25,7 +25,7 @@ https://github.com/KU-WM/Human-FinalProject-API.git<br>
 <br>
 
 ## 사용법
-개인 로컬 환경에서 실행/배포하는 프로젝트라 항상 서비스가 구동중이진 않습니다. 접속 불가시 아래의 실행 예시를 참고해 주세요.<br>
+개인 로컬 환경에서 실행/배포하는 프로젝트라 항상 서비스가 구동 중이진 않을 수 있습니다. 접속 불가시 아래의 실행 예시를 참고해 주세요.<br>
 
 <h3>이미지 생성</h3>
 <img src="https://github.com/user-attachments/assets/85cc6a6d-3c04-41d2-b8ea-1ad42b39f49a" />
@@ -38,14 +38,15 @@ https://github.com/KU-WM/Human-FinalProject-API.git<br>
 
 <h3>로그인</h3>
 <img src="https://github.com/user-attachments/assets/0d387bcf-a695-40a4-add7-5ff83cf42496" />
-<p>아이디/비밀번호로 로그인(관리자 계정)</p>
+<p>아이디와 비밀번호를 입력해 로그인할 수 있습니다. (관리자 계정 지원)</p>
 
 <h3>로그인비교</h3>
-<div syyle={ "display":"flex" }>
+<div style={ "display":"flex" }>
   <img width="49%" src="https://github.com/user-attachments/assets/47f6ed98-c326-440f-bb24-04adeb743c03" />
   <img width="49%" src="https://github.com/user-attachments/assets/6dd72b52-c659-453e-b513-eb879a5da885" />
 </div>
-<p>관리자 로그인(좌) / 일반 유저 로그인(우)</p>
+
+관리자 로그인( **좌** ) / 일반 유저 로그인( **우** )
 <p>상단 네비게이션의 관리자 항목이 관리자로 로그인 한 경우에만 보이고 활성화 됩니다.</p>
 
 <h3>회원가입</h3>
@@ -84,7 +85,7 @@ https://github.com/KU-WM/Human-FinalProject-API.git<br>
 ```
 📦src
  ┣ 📂component
- ┃ ┗ 📜refreshApi.jsx
+ ┃ ┗ 📜refreshApi.jsx   - Springboot와 통신하는 axios 코드 정의
  ┣ 📂css
  ┃ ┣ 📂admin_sub
  ┃ ┃ ┣ 📜logs.css
@@ -100,19 +101,18 @@ https://github.com/KU-WM/Human-FinalProject-API.git<br>
  ┃ ┗ 📜info_icon.png
  ┣ 📂pages
  ┃ ┣ 📂admin_sub
- ┃ ┃ ┣ 📜images.jsx
- ┃ ┃ ┣ 📜logs.jsx
- ┃ ┃ ┣ 📜statistic.jsx
- ┃ ┃ ┣ 📜tempImage.jsx
- ┃ ┃ ┗ 📜users.jsx
- ┃ ┣ 📜admin.jsx
- ┃ ┣ 📜chatting.jsx
- ┃ ┣ 📜header.jsx
- ┃ ┣ 📜login.jsx
- ┃ ┣ 📜main.jsx
- ┃ ┗ 📜myPage.jsx
+ ┃ ┃ ┣ 📜images.jsx     - 로그인한 유저가 생성한 이미지 관리
+ ┃ ┃ ┣ 📜logs.jsx       - 전체 사용자 로그 조회
+ ┃ ┃ ┣ 📜statistic.jsx  - 전체 서비스 이용 통계
+ ┃ ┃ ┣ 📜tempImage.jsx  - 로그인하지 않은 유저가 생성한 이미지 관리
+ ┃ ┃ ┗ 📜users.jsx      - 회원가입한 유저 관리
+ ┃ ┣ 📜admin.jsx        - 관리자 페이지 
+ ┃ ┣ 📜header.jsx       - 사이트 공통 header
+ ┃ ┣ 📜login.jsx        - 로그인/회원가입 페이지
+ ┃ ┣ 📜main.jsx         - 메인 이미지 생성 페이지
+ ┃ ┗ 📜myPage.jsx       - 자신이 생성한 이미지 목록
  ┣ 📂routes
- ┃ ┗ 📜RootRoutes.jsx
+ ┃ ┗ 📜RootRoutes.jsx   - Navigate 경로 지정
  ┣ 📜App.css
  ┣ 📜App.js
  ┣ 📜App.test.js
@@ -127,8 +127,18 @@ https://github.com/KU-WM/Human-FinalProject-API.git<br>
 이 기능들을 쉽게 접근 가능하고 불편함 없이 간단한 설명만으로 원하는 이미지와 그에 어울리는 효과음을 생성할 수 있는 서비스를 제공하기 위해 제작하였습니다.
 
 ## 개발 과정
-- 2025.05.26 ~ 2025.06.26 (약 5주) 의 기간동안 진행
-- 오전/오후의 스크럼 회의를 통해 진행사항을 점검하고, 애자일 방법론을 통하여 유연한 개발을 진행
+- 2025.05.26 ~ 2025.06.26 (약 5주) 의 기간동안 진행하였습니다.
+- 오전/오후의 스크럼 회의를 통해 진행사항을 점검하고, 애자일 방법론을 통하여 유연한 개발을 진행하였습니다.
+
+## 🛠 사용 기술 스택
+
+| 분류 | 기술 |
+|------|------|
+| Frontend | React, JavaScript, HTML5, CSS3, Bootstrap |
+| Backend | SpringBoot, FastApi |
+| Infra | Nginx, Cloudflare tunnel |
+| AI 모델 | Gemini API (이미지 생성), Stable Audio 1.0 (효과음 생성) |
+
 
 ## License
 
